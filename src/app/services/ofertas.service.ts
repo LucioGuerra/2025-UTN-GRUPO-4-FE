@@ -1,23 +1,25 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { OfertaListaDTO } from '../models/oferta.dto';
+import { API_URL } from '../app.config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OfertasService {
-  private readonly API_URL = 'http://localhost:8080/api'; // Cambiar por URL del backend
-
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    @Inject(API_URL) private apiUrl: string
+  ) {}
 
   getOfertas(): Observable<OfertaListaDTO[]> {
-    // TODO: Reemplazar con: return this.http.get<OfertaListaDTO[]>(`${this.API_URL}/ofertas`);
+    // TODO: Reemplazar con: return this.http.get<OfertaListaDTO[]>(`${this.apiUrl}/ofertas`);
     return of(this.getMockOfertas());
   }
 
   getOfertaById(id: number): Observable<OfertaListaDTO | undefined> {
-    // TODO: Reemplazar con: return this.http.get<OfertaListaDTO>(`${this.API_URL}/ofertas/${id}`);
+    // TODO: Reemplazar con: return this.http.get<OfertaListaDTO>(`${this.apiUrl}/ofertas/${id}`);
     return of(this.getMockOfertas().find(o => o.id === id));
   }
 
