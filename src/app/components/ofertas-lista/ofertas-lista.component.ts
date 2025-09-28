@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OfertaCardComponent } from '../oferta-card/oferta-card.component';
 import { OfertaListaDTO } from '../../models/oferta.dto';
+import { OfertasService } from '../../services/ofertas.service';
 
 @Component({
   selector: 'app-ofertas-lista',
@@ -25,28 +26,11 @@ import { OfertaListaDTO } from '../../models/oferta.dto';
 export class OfertasListaComponent implements OnInit {
   ofertas: OfertaListaDTO[] = [];
 
+  constructor(private ofertasService: OfertasService) {}
+
   ngOnInit(): void {
-    this.ofertas = [
-      {
-        id: 1,
-        titulo: 'Desarrollador Full Stack',
-        descripcion: 'Desarrollo de aplicaciones web',
-        requisitos: 'Angular, Node.js',
-        modalidad: 'remoto',
-        locacion: 'Buenos Aires, Argentina',
-        pagoAprox: 'USD 2000-3000',
-        atributos: ['Angular', 'Node.js', 'TypeScript', 'MongoDB', 'Docker', 'AWS']
-      },
-      {
-        id: 2,
-        titulo: 'Frontend Developer',
-        descripcion: 'Desarrollo de interfaces de usuario',
-        requisitos: 'React, JavaScript',
-        modalidad: 'híbrido',
-        locacion: 'Córdoba, Argentina',
-        pagoAprox: 'USD 1500-2500',
-        atributos: ['React', 'JavaScript', 'CSS', 'HTML']
-      }
-    ];
+    this.ofertasService.getOfertas().subscribe(ofertas => {
+      this.ofertas = ofertas;
+    });
   }
 }

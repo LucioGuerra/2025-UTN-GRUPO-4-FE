@@ -4,6 +4,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatChipsModule } from '@angular/material/chips';
 import { OfertaListaDTO } from '../../models/oferta.dto';
+import { OfertasService } from '../../services/ofertas.service';
 
 @Component({
   selector: 'app-oferta-detalle',
@@ -58,39 +59,15 @@ export class OfertaDetalleComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private ofertasService: OfertasService
   ) {}
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.cargarOferta(id);
-  }
-
-  private cargarOferta(id: number): void {
-    const ofertas: OfertaListaDTO[] = [
-      {
-        id: 1,
-        titulo: 'Desarrollador Full Stack',
-        descripcion: 'Buscamos un desarrollador full stack con experiencia en tecnologías modernas.',
-        requisitos: 'Mínimo 3 años de experiencia en Angular y Node.js.',
-        modalidad: 'remoto',
-        locacion: 'Buenos Aires, Argentina',
-        pagoAprox: 'USD 2000-3000',
-        atributos: ['Angular', 'Node.js', 'TypeScript', 'MongoDB', 'Docker', 'AWS']
-      },
-      {
-        id: 2,
-        titulo: 'Frontend Developer',
-        descripcion: 'Desarrollador frontend especializado en React.',
-        requisitos: '2+ años de experiencia en React.',
-        modalidad: 'híbrido',
-        locacion: 'Córdoba, Argentina',
-        pagoAprox: 'USD 1500-2500',
-        atributos: ['React', 'JavaScript', 'CSS', 'HTML']
-      }
-    ];
-    
-    this.oferta = ofertas.find(o => o.id === id);
+    this.ofertasService.getOfertaById(id).subscribe(oferta => {
+      this.oferta = oferta;
+    });
   }
 
   volver(): void {
