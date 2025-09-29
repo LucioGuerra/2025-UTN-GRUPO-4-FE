@@ -8,7 +8,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { OfertaListaDTO, EstadoAplicacion } from '../../models/oferta.dto';
 import { OfertasService } from '../../services/ofertas.service';
 import { UsuarioService, Usuario } from '../../services/usuario.service';
-import { AplicarDialogComponent } from '../aplicar-dialog/aplicar-dialog.component';
+import { AplicarDialogComponent } from '../../components/aplicar-dialog/aplicar-dialog.component';
 
 @Component({
   selector: 'app-oferta-detalle',
@@ -40,7 +40,7 @@ import { AplicarDialogComponent } from '../aplicar-dialog/aplicar-dialog.compone
             </div>
           </div>
         </div>
-        
+
         <div class="content-container">
           <div class="main-content">
             <mat-card class="modern-card info-card">
@@ -54,7 +54,7 @@ import { AplicarDialogComponent } from '../aplicar-dialog/aplicar-dialog.compone
                 <p class="description-text">{{ oferta.descripcion }}</p>
               </mat-card-content>
             </mat-card>
-            
+
             <mat-card class="modern-card info-card">
               <mat-card-header>
                 <mat-card-title>
@@ -66,7 +66,7 @@ import { AplicarDialogComponent } from '../aplicar-dialog/aplicar-dialog.compone
                 <p class="requirements-text">{{ oferta.requisitos }}</p>
               </mat-card-content>
             </mat-card>
-            
+
             <mat-card class="modern-card tech-card">
               <mat-card-header>
                 <mat-card-title>
@@ -83,7 +83,7 @@ import { AplicarDialogComponent } from '../aplicar-dialog/aplicar-dialog.compone
               </mat-card-content>
             </mat-card>
           </div>
-          
+
           <div class="sidebar">
             <mat-card class="modern-card action-card">
               <mat-card-content>
@@ -100,7 +100,7 @@ import { AplicarDialogComponent } from '../aplicar-dialog/aplicar-dialog.compone
                     </div>
                   }
                 </div>
-                
+
                 <div class="action-buttons">
                   @if (oferta.estado === 'APLICADO') {
                     <button mat-raised-button class="applied-button" disabled>
@@ -113,7 +113,7 @@ import { AplicarDialogComponent } from '../aplicar-dialog/aplicar-dialog.compone
                       Aplicar Ahora
                     </button>
                   }
-                  
+
                   <button mat-stroked-button class="save-button">
                     <mat-icon>bookmark_border</mat-icon>
                     Guardar Oferta
@@ -121,7 +121,7 @@ import { AplicarDialogComponent } from '../aplicar-dialog/aplicar-dialog.compone
                 </div>
               </mat-card-content>
             </mat-card>
-            
+
             <mat-card class="modern-card quick-info">
               <mat-card-header>
                 <mat-card-title>Información Rápida</mat-card-title>
@@ -162,7 +162,7 @@ import { AplicarDialogComponent } from '../aplicar-dialog/aplicar-dialog.compone
       min-height: 100vh;
       background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     }
-    
+
     .page-header {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
@@ -170,7 +170,7 @@ import { AplicarDialogComponent } from '../aplicar-dialog/aplicar-dialog.compone
       position: relative;
       overflow: hidden;
     }
-    
+
     .page-header::before {
       content: '';
       position: absolute;
@@ -181,7 +181,7 @@ import { AplicarDialogComponent } from '../aplicar-dialog/aplicar-dialog.compone
       background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff" opacity="0.1"><polygon points="1000,100 1000,0 0,100"/></svg>');
       background-size: cover;
     }
-    
+
     .header-content {
       max-width: 1200px;
       margin: 0 auto;
@@ -192,7 +192,7 @@ import { AplicarDialogComponent } from '../aplicar-dialog/aplicar-dialog.compone
       position: relative;
       z-index: 1;
     }
-    
+
     .back-button {
       background: rgba(255,255,255,0.2) !important;
       backdrop-filter: blur(10px);
@@ -200,25 +200,25 @@ import { AplicarDialogComponent } from '../aplicar-dialog/aplicar-dialog.compone
       color: white !important;
       margin-top: 8px;
     }
-    
+
     .header-info {
       flex: 1;
     }
-    
+
     .job-title {
       font-size: 2.5rem;
       font-weight: 700;
       margin: 0 0 16px 0;
       line-height: 1.2;
     }
-    
+
     .job-meta {
       display: flex;
       flex-wrap: wrap;
       gap: 24px;
       align-items: center;
     }
-    
+
     .meta-item {
       display: flex;
       align-items: center;
@@ -226,13 +226,13 @@ import { AplicarDialogComponent } from '../aplicar-dialog/aplicar-dialog.compone
       font-size: 1rem;
       opacity: 0.9;
     }
-    
+
     .meta-item mat-icon {
       font-size: 20px;
       width: 20px;
       height: 20px;
     }
-    
+
     .salary-highlight {
       background: rgba(255,255,255,0.2);
       backdrop-filter: blur(10px);
@@ -242,7 +242,7 @@ import { AplicarDialogComponent } from '../aplicar-dialog/aplicar-dialog.compone
       font-size: 1.1rem;
       border: 1px solid rgba(255,255,255,0.3);
     }
-    
+
     .content-container {
       max-width: 1200px;
       margin: 0 auto;
@@ -251,17 +251,17 @@ import { AplicarDialogComponent } from '../aplicar-dialog/aplicar-dialog.compone
       grid-template-columns: 1fr 350px;
       gap: 32px;
     }
-    
+
     .main-content {
       display: flex;
       flex-direction: column;
       gap: 24px;
     }
-    
+
     .info-card mat-card-header {
       padding-bottom: 16px;
     }
-    
+
     .info-card mat-card-title {
       display: flex;
       align-items: center;
@@ -270,14 +270,14 @@ import { AplicarDialogComponent } from '../aplicar-dialog/aplicar-dialog.compone
       font-weight: 600;
       color: #1a202c;
     }
-    
+
     .info-card mat-card-title mat-icon {
       color: #667eea;
       font-size: 24px;
       width: 24px;
       height: 24px;
     }
-    
+
     .description-text,
     .requirements-text {
       font-size: 1rem;
@@ -285,13 +285,13 @@ import { AplicarDialogComponent } from '../aplicar-dialog/aplicar-dialog.compone
       color: #4a5568;
       margin: 0;
     }
-    
+
     .tech-grid {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
     }
-    
+
     .tech-chip {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
       color: white !important;
@@ -301,25 +301,25 @@ import { AplicarDialogComponent } from '../aplicar-dialog/aplicar-dialog.compone
       height: 32px !important;
       border-radius: 16px !important;
     }
-    
+
     .sidebar {
       display: flex;
       flex-direction: column;
       gap: 24px;
     }
-    
+
     .action-card {
       position: sticky;
       top: 24px;
     }
-    
+
     .application-status {
       text-align: center;
       margin-bottom: 24px;
       padding: 20px;
       border-radius: 12px;
     }
-    
+
     .status-applied {
       background: linear-gradient(135deg, #10b981 0%, #059669 100%);
       color: white;
@@ -329,7 +329,7 @@ import { AplicarDialogComponent } from '../aplicar-dialog/aplicar-dialog.compone
       gap: 8px;
       font-weight: 600;
     }
-    
+
     .status-available {
       background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
       color: white;
@@ -339,13 +339,13 @@ import { AplicarDialogComponent } from '../aplicar-dialog/aplicar-dialog.compone
       gap: 8px;
       font-weight: 600;
     }
-    
+
     .action-buttons {
       display: flex;
       flex-direction: column;
       gap: 12px;
     }
-    
+
     .apply-button {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
       color: white !important;
@@ -356,12 +356,12 @@ import { AplicarDialogComponent } from '../aplicar-dialog/aplicar-dialog.compone
       font-size: 1rem !important;
       box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3) !important;
     }
-    
+
     .apply-button:hover {
       transform: translateY(-2px);
       box-shadow: 0 12px 32px rgba(102, 126, 234, 0.4) !important;
     }
-    
+
     .applied-button {
       background: #e2e8f0 !important;
       color: #64748b !important;
@@ -370,7 +370,7 @@ import { AplicarDialogComponent } from '../aplicar-dialog/aplicar-dialog.compone
       border-radius: 12px !important;
       padding: 16px !important;
     }
-    
+
     .save-button {
       border: 2px solid #e2e8f0 !important;
       color: #64748b !important;
@@ -379,29 +379,29 @@ import { AplicarDialogComponent } from '../aplicar-dialog/aplicar-dialog.compone
       border-radius: 12px !important;
       padding: 14px !important;
     }
-    
+
     .save-button:hover {
       background: #f8fafc !important;
       border-color: #cbd5e1 !important;
     }
-    
+
     .quick-info mat-card-title {
       font-size: 1.1rem;
       color: #1a202c;
     }
-    
+
     .info-list {
       display: flex;
       flex-direction: column;
       gap: 16px;
     }
-    
+
     .info-item {
       display: flex;
       align-items: flex-start;
       gap: 12px;
     }
-    
+
     .info-item mat-icon {
       color: #667eea;
       font-size: 20px;
@@ -409,58 +409,58 @@ import { AplicarDialogComponent } from '../aplicar-dialog/aplicar-dialog.compone
       height: 20px;
       margin-top: 2px;
     }
-    
+
     .info-item div {
       display: flex;
       flex-direction: column;
       gap: 4px;
     }
-    
+
     .info-item strong {
       font-size: 0.9rem;
       color: #1a202c;
       font-weight: 600;
     }
-    
+
     .info-item span {
       font-size: 0.9rem;
       color: #64748b;
     }
-    
+
     @media (max-width: 1024px) {
       .content-container {
         grid-template-columns: 1fr;
         gap: 24px;
       }
-      
+
       .action-card {
         position: static;
       }
     }
-    
+
     @media (max-width: 768px) {
       .header-content {
         padding: 0 16px;
       }
-      
+
       .job-title {
         font-size: 2rem;
       }
-      
+
       .job-meta {
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
       }
-      
+
       .content-container {
         padding: 24px 16px;
       }
-      
+
       .main-content {
         gap: 16px;
       }
-      
+
       .sidebar {
         gap: 16px;
       }
@@ -484,7 +484,7 @@ export class OfertaDetalleComponent implements OnInit {
     this.ofertasService.getOfertaById(id).subscribe(oferta => {
       this.oferta = oferta;
     });
-    
+
     this.usuarioService.getCurrentUser().subscribe(usuario => {
       this.usuario = usuario;
     });

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { OfertaCardComponent } from '../oferta-card/oferta-card.component';
+import { OfertaCardComponent } from '../../components/oferta-card/oferta-card.component';
 import { OfertaListaDTO } from '../../models/oferta.dto';
 import { OfertasService } from '../../services/ofertas.service';
 
@@ -19,14 +19,14 @@ import { OfertasService } from '../../services/ofertas.service';
           <span class="count-badge">{{ ofertas.length }} ofertas disponibles</span>
         </div>
       </div>
-      
+
       <div class="ofertas-container">
         <div class="ofertas-grid">
           @for (oferta of ofertas; track oferta.id) {
             <app-oferta-card [oferta]="oferta"></app-oferta-card>
           }
         </div>
-        
+
         @if (ofertas.length === 0) {
           <div class="empty-state">
             <mat-icon class="empty-icon">work_off</mat-icon>
@@ -42,7 +42,7 @@ import { OfertasService } from '../../services/ofertas.service';
       min-height: 100vh;
       background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     }
-    
+
     .page-header {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
@@ -50,7 +50,7 @@ import { OfertasService } from '../../services/ofertas.service';
       position: relative;
       overflow: hidden;
     }
-    
+
     .page-header::before {
       content: '';
       position: absolute;
@@ -61,7 +61,7 @@ import { OfertasService } from '../../services/ofertas.service';
       background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff" opacity="0.1"><polygon points="1000,100 1000,0 0,100"/></svg>');
       background-size: cover;
     }
-    
+
     .header-content {
       max-width: 1200px;
       margin: 0 auto;
@@ -72,23 +72,23 @@ import { OfertasService } from '../../services/ofertas.service';
       position: relative;
       z-index: 1;
     }
-    
+
     .page-title {
       font-size: 2.5rem;
       font-weight: 700;
       margin: 0 0 8px 0;
     }
-    
+
     .page-subtitle {
       font-size: 1.1rem;
       opacity: 0.9;
       margin: 0;
     }
-    
+
     .results-count {
       text-align: right;
     }
-    
+
     .count-badge {
       background: rgba(255,255,255,0.2);
       backdrop-filter: blur(10px);
@@ -97,25 +97,25 @@ import { OfertasService } from '../../services/ofertas.service';
       font-weight: 500;
       border: 1px solid rgba(255,255,255,0.3);
     }
-    
+
     .ofertas-container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 40px 24px;
     }
-    
+
     .ofertas-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
       gap: 24px;
     }
-    
+
     .empty-state {
       text-align: center;
       padding: 80px 20px;
       color: #64748b;
     }
-    
+
     .empty-icon {
       font-size: 64px !important;
       width: 64px !important;
@@ -123,19 +123,19 @@ import { OfertasService } from '../../services/ofertas.service';
       margin-bottom: 24px;
       opacity: 0.5;
     }
-    
+
     .empty-state h3 {
       font-size: 1.5rem;
       margin-bottom: 12px;
       color: #374151;
     }
-    
+
     .empty-state p {
       font-size: 1rem;
       max-width: 400px;
       margin: 0 auto;
     }
-    
+
     @media (max-width: 768px) {
       .header-content {
         flex-direction: column;
@@ -143,15 +143,15 @@ import { OfertasService } from '../../services/ofertas.service';
         gap: 20px;
         padding: 0 16px;
       }
-      
+
       .page-title {
         font-size: 2rem;
       }
-      
+
       .ofertas-container {
         padding: 24px 16px;
       }
-      
+
       .ofertas-grid {
         grid-template-columns: 1fr;
         gap: 16px;
