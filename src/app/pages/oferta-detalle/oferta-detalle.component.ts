@@ -68,7 +68,7 @@ import { AplicarDialogComponent } from '../../components/aplicar-dialog/aplicar-
             </mat-card-content>
           </mat-card>
 
-          <mat-card class="modern-card tech-card">
+          <mat-card class="modern-card info-card">
             <mat-card-header>
               <mat-card-title>
                 <mat-icon>code</mat-icon>
@@ -114,9 +114,12 @@ import { AplicarDialogComponent } from '../../components/aplicar-dialog/aplicar-
             </mat-card-content>
           </mat-card>
 
-          <mat-card class="modern-card quick-info">
+          <mat-card class="modern-card info-card">
             <mat-card-header>
-              <mat-card-title>Información Rápida</mat-card-title>
+              <mat-card-title>
+                <mat-icon>bolt</mat-icon>
+                Informacion Rápida
+              </mat-card-title>
             </mat-card-header>
             <mat-card-content>
               <div class="info-list">
