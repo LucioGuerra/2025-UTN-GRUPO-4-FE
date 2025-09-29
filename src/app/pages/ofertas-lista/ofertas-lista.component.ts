@@ -15,9 +15,6 @@ import { OfertasService } from '../../services/ofertas.service';
           <h1 class="page-title">Todas las Ofertas Laborales</h1>
           <p class="page-subtitle">Descubre oportunidades que se adapten a tu perfil</p>
         </div>
-        <div class="results-count">
-          <span class="count-badge">{{ ofertas.length }} ofertas disponibles</span>
-        </div>
       </div>
 
       <div class="ofertas-container">
