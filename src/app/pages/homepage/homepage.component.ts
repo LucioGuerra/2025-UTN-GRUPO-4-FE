@@ -2,15 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-import { OfertaCardComponent } from '../../components/oferta-card/oferta-card.component';
-import { OfertaListaDTO } from '../../models/oferta.dto';
-import { OfertasService } from '../../services/ofertas.service';
+import { EmpresaDTO } from '../../models/empresa.dto';
+import { EmpresasService } from '../../services/empresas.service';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [MatButtonModule, MatCardModule, MatIconModule, OfertaCardComponent],
+  imports: [MatButtonModule, MatCardModule, MatIconModule],
   template: `
     <div class="homepage-container">
       <section class="hero-section animate-fade-in">
@@ -48,16 +47,23 @@ import { Router } from '@angular/router';
         </div>
       </section>
 
-      <section class="ofertas-destacadas">
+      <section class="empresas-confianza">
         <div class="section-header">
-          <h2 class="section-title">Ofertas Destacadas</h2>
+          <h2 class="section-title">Empresas que confían en nosotros</h2>
           <p class="section-subtitle">
-            Las mejores oportunidades seleccionadas para ti
+            Las mejores empresas tecnológicas publican sus ofertas con nosotros
           </p>
         </div>
-        <div class="ofertas-grid">
-          @for (oferta of ofertasDestacadas; track oferta.id) {
-          <app-oferta-card [oferta]="oferta"></app-oferta-card>
+        <div class="empresas-grid">
+          @for (empresa of empresas; track empresa.id) {
+          <div class="empresa-card">
+            <div class="empresa-logo">{{ empresa.logo }}</div>
+            <div class="empresa-info">
+              <h3 class="empresa-nombre">{{ empresa.nombre }}</h3>
+              <p class="empresa-sector">{{ empresa.sector }}</p>
+              <span class="empresa-tamanio">{{ empresa.tamanio }}</span>
+            </div>
+          </div>
           }
         </div>
         <div class="ver-mas">
@@ -241,7 +247,7 @@ import { Router } from '@angular/router';
       font-weight: 500;
     }
 
-    .ofertas-destacadas {
+    .empresas-confianza {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 24px 80px;
@@ -266,11 +272,56 @@ import { Router } from '@angular/router';
       margin: 0 auto;
     }
 
-    .ofertas-grid {
+    .empresas-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 24px;
       margin-bottom: 60px;
+    }
+
+    .empresa-card {
+      background: var(--white);
+      border-radius: var(--border-radius);
+      padding: 32px 24px;
+      text-align: center;
+      box-shadow: var(--shadow-light);
+      transition: var(--transition);
+      border: 1px solid var(--border-light);
+    }
+
+    .empresa-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-medium);
+    }
+
+    .empresa-logo {
+      font-size: 3rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .empresa-nombre {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 0 0 8px 0;
+    }
+
+    .empresa-sector {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin: 0 0 12px 0;
+    }
+
+    .empresa-tamanio {
+      display: inline-block;
+      background: var(--chip-bg);
+      color: var(--primary-color);
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      border: 1px solid var(--chip-border);
     }
 
     .ver-mas {
@@ -334,21 +385,30 @@ import { Router } from '@angular/router';
         font-size: 2rem;
       }
 
-      .ofertas-destacadas {
+      .empresas-confianza {
         padding: 0 16px 60px;
+      }
+
+      .empresas-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 16px;
+      }
+
+      .empresa-card {
+        padding: 24px 16px;
       }
     }
   `,
   ],
 })
 export class HomepageComponent implements OnInit {
-  ofertasDestacadas: OfertaListaDTO[] = [];
+  empresas: EmpresaDTO[] = [];
 
-  constructor(private ofertasService: OfertasService, private router: Router) {}
+  constructor(private empresasService: EmpresasService, private router: Router) {}
 
   ngOnInit(): void {
-    this.ofertasService.getOfertas().subscribe((ofertas) => {
-      this.ofertasDestacadas = ofertas.slice(0, 3);
+    this.empresasService.getEmpresas().subscribe((empresas) => {
+      this.empresas = empresas;
     });
   }
 
