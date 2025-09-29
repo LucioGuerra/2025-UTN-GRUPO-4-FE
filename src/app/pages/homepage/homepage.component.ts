@@ -41,23 +41,6 @@ import { Router } from '@angular/router';
         </div>
       </section>
 
-      <section class="stats-section">
-        <div class="stats-grid">
-          <div class="stat-item">
-            <div class="stat-number">500+</div>
-            <div class="stat-label">Ofertas Activas</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">1200+</div>
-            <div class="stat-label">Estudiantes Registrados</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">95%</div>
-            <div class="stat-label">Tasa de Éxito</div>
-          </div>
-        </div>
-      </section>
-
       <section class="ofertas-destacadas">
         <div class="section-header">
           <h2 class="section-title">Ofertas Destacadas</h2>
@@ -81,7 +64,7 @@ import { Router } from '@angular/router';
     .homepage-container {
       min-height: 100vh;
     }
-    
+
     .hero-section {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       padding: 80px 0;
@@ -89,7 +72,7 @@ import { Router } from '@angular/router';
       position: relative;
       overflow: hidden;
     }
-    
+
     .hero-section::before {
       content: '';
       position: absolute;
@@ -100,7 +83,7 @@ import { Router } from '@angular/router';
       background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff" opacity="0.1"><polygon points="1000,100 1000,0 0,100"/></svg>');
       background-size: cover;
     }
-    
+
     .hero-content {
       max-width: 1200px;
       margin: 0 auto;
@@ -112,31 +95,31 @@ import { Router } from '@angular/router';
       position: relative;
       z-index: 1;
     }
-    
+
     .hero-text {
       color: white;
     }
-    
+
     .hero-title {
       font-size: 3.5rem;
       font-weight: 800;
       line-height: 1.2;
       margin-bottom: 24px;
     }
-    
+
     .hero-subtitle {
       font-size: 1.3rem;
       line-height: 1.6;
       margin-bottom: 40px;
       opacity: 0.9;
     }
-    
+
     .hero-actions {
       display: flex;
       gap: 16px;
       flex-wrap: wrap;
     }
-    
+
     .cta-button {
       background: white !important;
       color: #667eea !important;
@@ -148,12 +131,12 @@ import { Router } from '@angular/router';
       box-shadow: 0 8px 24px rgba(0,0,0,0.15) !important;
       transition: all 0.3s ease !important;
     }
-    
+
     .cta-button:hover {
       transform: translateY(-3px);
       box-shadow: 0 12px 32px rgba(0,0,0,0.25) !important;
     }
-    
+
     .secondary-button {
       border: 2px solid rgba(255,255,255,0.3) !important;
       color: white !important;
@@ -163,12 +146,12 @@ import { Router } from '@angular/router';
       text-transform: none !important;
       backdrop-filter: blur(10px);
     }
-    
+
     .hero-visual {
       position: relative;
       height: 400px;
     }
-    
+
     .floating-card {
       position: absolute;
       width: 80px;
@@ -183,37 +166,37 @@ import { Router } from '@angular/router';
       animation: float 6s ease-in-out infinite;
       border: 1px solid rgba(255,255,255,0.2);
     }
-    
+
     .card-1 {
       top: 20%;
       left: 20%;
       animation-delay: 0s;
     }
-    
+
     .card-2 {
       top: 50%;
       right: 20%;
       animation-delay: 2s;
     }
-    
+
     .card-3 {
       bottom: 20%;
       left: 40%;
       animation-delay: 4s;
     }
-    
+
     @keyframes float {
       0%, 100% { transform: translateY(0px); }
       50% { transform: translateY(-20px); }
     }
-    
+
     .stats-section {
       padding: 60px 0;
       background: rgba(255,255,255,0.8);
       backdrop-filter: blur(10px);
       margin-bottom: 80px;
     }
-    
+
     .stats-grid {
       max-width: 1200px;
       margin: 0 auto;
@@ -223,11 +206,11 @@ import { Router } from '@angular/router';
       gap: 40px;
       text-align: center;
     }
-    
+
     .stat-item {
       padding: 20px;
     }
-    
+
     .stat-number {
       font-size: 3rem;
       font-weight: 800;
@@ -237,49 +220,49 @@ import { Router } from '@angular/router';
       background-clip: text;
       margin-bottom: 8px;
     }
-    
+
     .stat-label {
       font-size: 1.1rem;
       color: #666;
       font-weight: 500;
     }
-    
+
     .ofertas-destacadas {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 24px 80px;
     }
-    
+
     .section-header {
       text-align: center;
       margin-bottom: 60px;
     }
-    
+
     .section-title {
       font-size: 2.5rem;
       font-weight: 700;
       color: #333;
       margin-bottom: 16px;
     }
-    
+
     .section-subtitle {
       font-size: 1.2rem;
       color: #666;
       max-width: 600px;
       margin: 0 auto;
     }
-    
+
     .ofertas-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       gap: 24px;
       margin-bottom: 60px;
     }
-    
+
     .ver-mas {
       text-align: center;
     }
-    
+
     .view-all-button {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
       color: white !important;
@@ -292,12 +275,12 @@ import { Router } from '@angular/router';
       align-items: center !important;
       gap: 8px !important;
     }
-    
+
     .view-all-button:hover {
       transform: translateY(-3px);
       box-shadow: 0 12px 32px rgba(102, 126, 234, 0.4) !important;
     }
-    
+
     @media (max-width: 768px) {
       .hero-content {
         grid-template-columns: 1fr;
@@ -305,38 +288,38 @@ import { Router } from '@angular/router';
         text-align: center;
         padding: 0 16px;
       }
-      
+
       .hero-title {
         font-size: 2.5rem;
       }
-      
+
       .hero-subtitle {
         font-size: 1.1rem;
       }
-      
+
       .hero-visual {
         height: 200px;
       }
-      
+
       .floating-card {
         width: 60px;
         height: 60px;
         font-size: 24px;
       }
-      
+
       .stats-grid {
         padding: 0 16px;
         gap: 20px;
       }
-      
+
       .stat-number {
         font-size: 2rem;
       }
-      
+
       .section-title {
         font-size: 2rem;
       }
-      
+
       .ofertas-destacadas {
         padding: 0 16px 60px;
       }
