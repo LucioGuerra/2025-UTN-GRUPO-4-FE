@@ -3,8 +3,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatChipsModule } from '@angular/material/chips';
-import { OfertaListaDTO } from '../../models/oferta.dto';
+import { MatDialog } from '@angular/material/dialog';
+import { OfertaListaDTO, EstadoAplicacion } from '../../models/oferta.dto';
 import { OfertasService } from '../../services/ofertas.service';
+import { UsuarioService, Usuario } from '../../services/usuario.service';
+import { AplicarDialogComponent } from '../aplicar-dialog/aplicar-dialog.component';
 
 @Component({
   selector: 'app-oferta-detalle',
@@ -33,7 +36,11 @@ import { OfertasService } from '../../services/ofertas.service';
             </div>
           </mat-card-content>
           <mat-card-actions>
-            <button mat-raised-button color="primary">Aplicar</button>
+            @if (oferta.estado === 'APLICADO') {
+              <button mat-raised-button color="accent" disabled>Ya Aplicado</button>
+            } @else {
+              <button mat-raised-button color="primary" (click)="abrirDialogoAplicar()">Aplicar</button>
+            }
             <button mat-button (click)="volver()">Volver</button>
           </mat-card-actions>
         </mat-card>
@@ -56,11 +63,14 @@ import { OfertasService } from '../../services/ofertas.service';
 })
 export class OfertaDetalleComponent implements OnInit {
   oferta?: OfertaListaDTO;
+  usuario?: Usuario;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private ofertasService: OfertasService
+    private ofertasService: OfertasService,
+    private usuarioService: UsuarioService,
+    private dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -68,9 +78,33 @@ export class OfertaDetalleComponent implements OnInit {
     this.ofertasService.getOfertaById(id).subscribe(oferta => {
       this.oferta = oferta;
     });
+    
+    this.usuarioService.getCurrentUser().subscribe(usuario => {
+      this.usuario = usuario;
+    });
   }
 
   volver(): void {
     this.router.navigate(['/ofertas']);
+  }
+
+  abrirDialogoAplicar(): void {
+    if (!this.oferta || !this.usuario) return;
+
+    const dialogRef = this.dialog.open(AplicarDialogComponent, {
+      width: '500px',
+      data: { ofertaTitulo: this.oferta.titulo }
+    });
+
+    dialogRef.afterClosed().subscribe(cartaPresentacion => {
+      if (cartaPresentacion !== undefined && this.oferta && this.usuario) {
+        this.ofertasService.aplicarAOferta({
+          ofertaId: this.oferta.id,
+          usuarioId: this.usuario.id,
+          cartaPresentacion
+        });
+        this.oferta.estado = EstadoAplicacion.APLICADO;
+      }
+    });
   }
 }

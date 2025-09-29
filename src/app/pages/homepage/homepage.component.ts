@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-import { OfertaCardComponent } from '../oferta-card/oferta-card.component';
+import { OfertaCardComponent } from '../../components/oferta-card/oferta-card.component';
 import { OfertaListaDTO } from '../../models/oferta.dto';
 import { OfertasService } from '../../services/ofertas.service';
 import { Router } from '@angular/router';
@@ -11,16 +10,8 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [MatToolbarModule, MatButtonModule, MatCardModule, MatIconModule, OfertaCardComponent],
+  imports: [MatButtonModule, MatCardModule, MatIconModule, OfertaCardComponent],
   template: `
-    <mat-toolbar color="primary">
-      <span>UniJobs</span>
-      <span class="spacer"></span>
-      <button mat-button>Inicio</button>
-      <button mat-button (click)="verTodasOfertas()">Ofertas</button>
-      <button mat-button>Mi Perfil</button>
-    </mat-toolbar>
-
     <div class="homepage-container">
       <section class="hero-section">
         <mat-card class="hero-card">
@@ -51,9 +42,6 @@ import { Router } from '@angular/router';
     </div>
   `,
   styles: [`
-    .spacer {
-      flex: 1 1 auto;
-    }
     .homepage-container {
       max-width: 1200px;
       margin: 0 auto;
