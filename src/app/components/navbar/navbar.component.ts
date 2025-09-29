@@ -11,7 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
     <mat-toolbar class="modern-navbar">
       <div class="navbar-content">
         <div class="logo-section" (click)="irInicio()">
-          <div class="logo-icon">🚀</div>
+          <!-- <div class="logo-icon">🚀</div> -->
           <span class="logo-text">UniJobs</span>
         </div>
         <nav class="nav-links">
@@ -39,7 +39,7 @@ import { MatButtonModule } from '@angular/material/button';
       z-index: 1000;
       height: 80px;
     }
-    
+
     .navbar-content {
       display: flex;
       align-items: center;
@@ -49,7 +49,7 @@ import { MatButtonModule } from '@angular/material/button';
       margin: 0 auto;
       padding: 0 24px;
     }
-    
+
     .logo-section {
       display: flex;
       align-items: center;
@@ -57,16 +57,16 @@ import { MatButtonModule } from '@angular/material/button';
       cursor: pointer;
       transition: all 0.3s ease;
     }
-    
+
     .logo-section:hover {
       transform: scale(1.05);
     }
-    
+
     .logo-icon {
       font-size: 32px;
       filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
     }
-    
+
     .logo-text {
       font-size: 24px;
       font-weight: 700;
@@ -75,13 +75,13 @@ import { MatButtonModule } from '@angular/material/button';
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-    
+
     .nav-links {
       display: flex;
       align-items: center;
       gap: 8px;
     }
-    
+
     .nav-button {
       border-radius: 12px !important;
       font-weight: 500 !important;
@@ -91,12 +91,12 @@ import { MatButtonModule } from '@angular/material/button';
       position: relative;
       overflow: hidden;
     }
-    
+
     .nav-button:hover {
       background: rgba(102, 126, 234, 0.1) !important;
       transform: translateY(-2px);
     }
-    
+
     .profile-button {
       border-radius: 24px !important;
       font-weight: 600 !important;
@@ -104,20 +104,20 @@ import { MatButtonModule } from '@angular/material/button';
       padding: 10px 20px !important;
       box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3) !important;
     }
-    
+
     @media (max-width: 768px) {
       .navbar-content {
         padding: 0 16px;
       }
-      
+
       .logo-text {
         font-size: 20px;
       }
-      
+
       .nav-links {
         gap: 4px;
       }
-      
+
       .nav-button span,
       .profile-button span {
         font-size: 14px;
