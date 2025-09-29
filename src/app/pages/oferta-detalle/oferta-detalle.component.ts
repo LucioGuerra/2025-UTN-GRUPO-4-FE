@@ -190,7 +190,9 @@ import { AplicarDialogComponent } from '../../components/aplicar-dialog/aplicar-
         backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.3);
         color: white !important;
-        margin-top: 8px;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
       }
 
       .header-info {
