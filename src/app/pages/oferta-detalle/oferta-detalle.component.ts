@@ -431,6 +431,10 @@ import { AplicarDialogComponent } from '../../components/aplicar-dialog/aplicar-
           gap: 24px;
         }
 
+        .sidebar {
+          order: -1;
+        }
+
         .action-card {
           position: static;
         }
