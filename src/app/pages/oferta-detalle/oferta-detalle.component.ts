@@ -105,10 +105,10 @@ import { AplicarDialogComponent } from '../../components/aplicar-dialog/aplicar-
                 </button>
                 }
 
-                <button mat-stroked-button class="save-button">
+                <!-- <button mat-stroked-button class="save-button">
                   <mat-icon>bookmark_border</mat-icon>
                   Guardar Oferta
-                </button>
+                </button> -->
               </div>
             </mat-card-content>
           </mat-card>
@@ -230,7 +230,7 @@ import { AplicarDialogComponent } from '../../components/aplicar-dialog/aplicar-
       .salary-highlight {
         background: rgba(255, 255, 255, 0.2);
         backdrop-filter: blur(10px);
-        padding: 12px 20px;
+        padding: 5px 20px;
         border-radius: 25px;
         font-weight: 600;
         font-size: 1.1rem;
