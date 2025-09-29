@@ -17,13 +17,20 @@ import { Router } from '@angular/router';
         <div class="hero-content">
           <div class="hero-text">
             <h1 class="hero-title">
-              Encuentra tu <span class="gradient-text">próxima oportunidad</span> laboral
+              Encuentra tu
+              <span class="gradient-text">próxima oportunidad</span> laboral
             </h1>
             <p class="hero-subtitle">
-              Conectamos estudiantes universitarios con las mejores ofertas de trabajo en tecnología
+              Conectamos estudiantes universitarios con las mejores ofertas de
+              trabajo en tecnología
             </p>
             <div class="hero-actions">
-              <button mat-raised-button class="cta-button" color="primary" (click)="verTodasOfertas()">
+              <button
+                mat-raised-button
+                class="cta-button"
+                color="primary"
+                (click)="verTodasOfertas()"
+              >
                 <mat-icon>rocket_launch</mat-icon>
                 Explorar Ofertas
               </button>
@@ -44,15 +51,21 @@ import { Router } from '@angular/router';
       <section class="ofertas-destacadas">
         <div class="section-header">
           <h2 class="section-title">Ofertas Destacadas</h2>
-          <p class="section-subtitle">Las mejores oportunidades seleccionadas para ti</p>
+          <p class="section-subtitle">
+            Las mejores oportunidades seleccionadas para ti
+          </p>
         </div>
         <div class="ofertas-grid">
           @for (oferta of ofertasDestacadas; track oferta.id) {
-            <app-oferta-card [oferta]="oferta"></app-oferta-card>
+          <app-oferta-card [oferta]="oferta"></app-oferta-card>
           }
         </div>
         <div class="ver-mas">
-          <button mat-raised-button class="view-all-button" (click)="verTodasOfertas()">
+          <button
+            mat-raised-button
+            class="view-all-button"
+            (click)="verTodasOfertas()"
+          >
             Ver todas las ofertas
             <mat-icon>arrow_forward</mat-icon>
           </button>
@@ -60,7 +73,8 @@ import { Router } from '@angular/router';
       </section>
     </div>
   `,
-  styles: [`
+  styles: [
+    `
     .homepage-container {
       min-height: 100vh;
     }
@@ -80,7 +94,7 @@ import { Router } from '@angular/router';
       left: 0;
       right: 0;
       bottom: 0;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff" opacity="0.1"><polygon points="1000,100 1000,0 0,100"/></svg>');
+      background: var(--primary-gradient);
       background-size: cover;
     }
 
@@ -324,18 +338,16 @@ import { Router } from '@angular/router';
         padding: 0 16px 60px;
       }
     }
-  `]
+  `,
+  ],
 })
 export class HomepageComponent implements OnInit {
   ofertasDestacadas: OfertaListaDTO[] = [];
 
-  constructor(
-    private ofertasService: OfertasService,
-    private router: Router
-  ) {}
+  constructor(private ofertasService: OfertasService, private router: Router) {}
 
   ngOnInit(): void {
-    this.ofertasService.getOfertas().subscribe(ofertas => {
+    this.ofertasService.getOfertas().subscribe((ofertas) => {
       this.ofertasDestacadas = ofertas.slice(0, 3);
     });
   }

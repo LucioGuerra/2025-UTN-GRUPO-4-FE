@@ -174,7 +174,7 @@ import { AplicarDialogComponent } from '../../components/aplicar-dialog/aplicar-
         left: 0;
         right: 0;
         bottom: 0;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff" opacity="0.1"><polygon points="1000,100 1000,0 0,100"/></svg>');
+        background: var(--primary-gradient);
         background-size: cover;
       }
 
@@ -352,11 +352,7 @@ import { AplicarDialogComponent } from '../../components/aplicar-dialog/aplicar-
       }
 
       .apply-button {
-        background: linear-gradient(
-          135deg,
-          #667eea 0%,
-          #764ba2 100%
-        ) !important;
+        background: var(--secondary-gradient) !important;
         color: white !important;
         font-weight: 600 !important;
         text-transform: none !important;

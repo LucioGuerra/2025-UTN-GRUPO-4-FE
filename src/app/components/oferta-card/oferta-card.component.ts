@@ -24,7 +24,7 @@ import { OfertaListaDTO } from '../../models/oferta.dto';
           {{ oferta.pagoAprox }}
         </div>
       </div>
-      
+
       <mat-card-content class="card-content">
         <div class="job-details">
           <div class="detail-item">
@@ -32,7 +32,7 @@ import { OfertaListaDTO } from '../../models/oferta.dto';
             <span>{{ oferta.modalidad }}</span>
           </div>
         </div>
-        
+
         <div class="tech-stack">
           @for (atributo of atributosLimitados; track atributo) {
             <mat-chip class="tech-chip" selected>{{ atributo }}</mat-chip>
@@ -42,7 +42,7 @@ import { OfertaListaDTO } from '../../models/oferta.dto';
           }
         </div>
       </mat-card-content>
-      
+
       <div class="card-footer">
         <button mat-button class="view-details-btn">
           Ver detalles
@@ -60,7 +60,7 @@ import { OfertaListaDTO } from '../../models/oferta.dto';
       position: relative;
       overflow: hidden;
     }
-    
+
     .oferta-card::before {
       content: '';
       position: absolute;
@@ -70,7 +70,7 @@ import { OfertaListaDTO } from '../../models/oferta.dto';
       height: 4px;
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     }
-    
+
     .card-header {
       padding: 24px 24px 16px;
       display: flex;
@@ -78,11 +78,11 @@ import { OfertaListaDTO } from '../../models/oferta.dto';
       align-items: flex-start;
       gap: 16px;
     }
-    
+
     .title-section {
       flex: 1;
     }
-    
+
     .job-title {
       font-size: 1.4rem;
       font-weight: 600;
@@ -90,7 +90,7 @@ import { OfertaListaDTO } from '../../models/oferta.dto';
       margin: 0 0 8px 0;
       line-height: 1.3;
     }
-    
+
     .location {
       display: flex;
       align-items: center;
@@ -98,15 +98,15 @@ import { OfertaListaDTO } from '../../models/oferta.dto';
       color: #64748b;
       font-size: 0.9rem;
     }
-    
+
     .location-icon {
       font-size: 16px;
       width: 16px;
       height: 16px;
     }
-    
+
     .salary-badge {
-      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      background: var(--secondary-gradient);
       color: white;
       padding: 8px 16px;
       border-radius: 20px;
@@ -115,15 +115,15 @@ import { OfertaListaDTO } from '../../models/oferta.dto';
       white-space: nowrap;
       box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
     }
-    
+
     .card-content {
       padding: 0 24px 16px !important;
     }
-    
+
     .job-details {
       margin-bottom: 16px;
     }
-    
+
     .detail-item {
       display: flex;
       align-items: center;
@@ -132,21 +132,21 @@ import { OfertaListaDTO } from '../../models/oferta.dto';
       font-size: 0.9rem;
       margin-bottom: 8px;
     }
-    
+
     .detail-icon {
       font-size: 18px;
       width: 18px;
       height: 18px;
       color: #667eea;
     }
-    
+
     .tech-stack {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
       align-items: center;
     }
-    
+
     .tech-chip {
       background: rgba(102, 126, 234, 0.1) !important;
       color: #667eea !important;
@@ -156,7 +156,7 @@ import { OfertaListaDTO } from '../../models/oferta.dto';
       height: 28px !important;
       border-radius: 14px !important;
     }
-    
+
     .more-tech {
       font-size: 0.75rem;
       color: #64748b;
@@ -165,13 +165,13 @@ import { OfertaListaDTO } from '../../models/oferta.dto';
       background: rgba(100, 116, 139, 0.1);
       border-radius: 12px;
     }
-    
+
     .card-footer {
       padding: 16px 24px 24px;
       border-top: 1px solid rgba(0,0,0,0.05);
       background: rgba(248, 250, 252, 0.5);
     }
-    
+
     .view-details-btn {
       color: #667eea !important;
       font-weight: 500 !important;
@@ -183,22 +183,22 @@ import { OfertaListaDTO } from '../../models/oferta.dto';
       gap: 4px !important;
       transition: all 0.3s ease !important;
     }
-    
+
     .view-details-btn:hover {
       background: rgba(102, 126, 234, 0.1) !important;
     }
-    
+
     .view-details-btn mat-icon {
       font-size: 18px;
       width: 18px;
       height: 18px;
       transition: transform 0.3s ease;
     }
-    
+
     .oferta-card:hover .view-details-btn mat-icon {
       transform: translateX(4px);
     }
-    
+
     @media (max-width: 768px) {
       .card-header {
         flex-direction: column;
@@ -206,19 +206,19 @@ import { OfertaListaDTO } from '../../models/oferta.dto';
         gap: 12px;
         padding: 20px 20px 12px;
       }
-      
+
       .salary-badge {
         align-self: flex-start;
       }
-      
+
       .job-title {
         font-size: 1.2rem;
       }
-      
+
       .card-content {
         padding: 0 20px 12px !important;
       }
-      
+
       .card-footer {
         padding: 12px 20px 20px;
       }
