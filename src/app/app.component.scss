@@ -1,0 +1,19 @@
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  position: relative;
+}
+
+::ng-deep .mat-mdc-dialog-container {
+  border-radius: 16px !important;
+  overflow: hidden;
+}
+
+::ng-deep .mat-mdc-dialog-surface {
+  border-radius: 16px !important;
+}
