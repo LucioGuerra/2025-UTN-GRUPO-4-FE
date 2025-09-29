@@ -116,6 +116,7 @@ import { MatIconModule } from '@angular/material/icon';
         text-transform: none !important;
         padding: 10px 20px !important;
         box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3) !important;
+        background: var(--secondary-gradient) !important;
       }
 
       @media (max-width: 768px) {
