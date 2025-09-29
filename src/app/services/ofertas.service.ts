@@ -62,7 +62,8 @@ export class OfertasService {
         locacion: 'Buenos Aires, Argentina',
         pagoAprox: 'USD 2000-3000',
         atributos: ['Angular', 'Node.js', 'TypeScript', 'MongoDB', 'Docker', 'AWS'],
-        estado: EstadoAplicacion.NO_APLICADO
+        estado: EstadoAplicacion.NO_APLICADO,
+        empresa: { id: 1, nombre: 'TechCorp Solutions' }
       },
       {
         id: 2,
@@ -73,7 +74,8 @@ export class OfertasService {
         locacion: 'Córdoba, Argentina',
         pagoAprox: 'USD 1500-2500',
         atributos: ['React', 'JavaScript', 'CSS', 'HTML'],
-        estado: EstadoAplicacion.NO_APLICADO
+        estado: EstadoAplicacion.NO_APLICADO,
+        empresa: { id: 2, nombre: 'InnovateWeb' }
       },
       {
         id: 3,
@@ -84,7 +86,8 @@ export class OfertasService {
         locacion: 'Mendoza, Argentina',
         pagoAprox: 'USD 2500-3500',
         atributos: ['Java', 'Spring Boot', 'PostgreSQL', 'Docker', 'Kubernetes'],
-        estado: EstadoAplicacion.NO_APLICADO
+        estado: EstadoAplicacion.NO_APLICADO,
+        empresa: { id: 3, nombre: 'Enterprise Systems' }
       }
     ];
   }

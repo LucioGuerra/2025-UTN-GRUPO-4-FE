@@ -24,6 +24,7 @@ import { AplicarDialogComponent } from '../../components/aplicar-dialog/aplicar-
           </button>
           <div class="header-info">
             <h1 class="job-title">{{ oferta.titulo }}</h1>
+            <div class="company-name">{{ oferta.empresa.nombre }}</div>
             <div class="job-meta">
               <div class="meta-item">
                 <mat-icon>location_on</mat-icon>
@@ -202,8 +203,15 @@ import { AplicarDialogComponent } from '../../components/aplicar-dialog/aplicar-
       .job-title {
         font-size: 2.5rem;
         font-weight: 700;
-        margin: 0 0 16px 0;
+        margin: 0 0 8px 0;
         line-height: 1.2;
+      }
+
+      .company-name {
+        font-size: 1.2rem;
+        font-weight: 500;
+        margin-bottom: 16px;
+        opacity: 0.9;
       }
 
       .job-meta {

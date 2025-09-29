@@ -3,6 +3,11 @@ export enum EstadoAplicacion {
   NO_APLICADO = 'NO_APLICADO'
 }
 
+export interface Empresa {
+  id: number;
+  nombre: string;
+}
+
 export interface AplicacionDTO {
   ofertaId: number;
   usuarioId: number;
@@ -19,4 +24,5 @@ export interface OfertaListaDTO {
   pagoAprox: string; // ejemplo: "USD 1500-2000"
   atributos: string[]; // ejemplo: ["Java", "Spring Boot", "Docker"]
   estado: EstadoAplicacion;
+  empresa: Empresa;
 }
