@@ -13,6 +13,36 @@
   --border-radius: 16px;
   --border-radius-lg: 24px;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Colores específicos */
+  --primary-color: #667eea;
+  --primary-dark: #764ba2;
+  --white: #ffffff;
+  --text-primary: #1a202c;
+  --text-secondary: #4a5568;
+  --text-muted: #64748b;
+  --text-light: #374151;
+  --background-light: #f8fafc;
+  --background-page: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  --border-light: #e2e8f0;
+  --border-medium: #cbd5e1;
+  --success-color: #10b981;
+  --success-dark: #059669;
+  --info-color: #3b82f6;
+  --info-dark: #1d4ed8;
+  --glass-white: rgba(255, 255, 255, 0.95);
+  --glass-white-light: rgba(255, 255, 255, 0.15);
+  --glass-white-medium: rgba(255, 255, 255, 0.2);
+  --glass-white-strong: rgba(255, 255, 255, 0.3);
+  --shadow-primary: rgba(102, 126, 234, 0.3);
+  --shadow-primary-hover: rgba(102, 126, 234, 0.4);
+  --shadow-dark: rgba(31, 38, 135, 0.1);
+  --shadow-black: rgba(0, 0, 0, 0.05);
+  --shadow-black-medium: rgba(0, 0, 0, 0.15);
+  --shadow-black-strong: rgba(0, 0, 0, 0.25);
+  --chip-bg: rgba(102, 126, 234, 0.1);
+  --chip-border: rgba(102, 126, 234, 0.2);
+  --muted-bg: rgba(100, 116, 139, 0.1);
 }
 
 html, body {

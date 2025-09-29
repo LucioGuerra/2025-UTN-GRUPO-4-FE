@@ -33,10 +33,10 @@ import { MatIconModule } from '@angular/material/icon';
   styles: [
     `
       .modern-navbar {
-        background: rgba(255, 255, 255, 0.95) !important;
+        background: var(--glass-white) !important;
         backdrop-filter: blur(20px);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+        border-bottom: 1px solid var(--glass-border);
+        box-shadow: var(--shadow-dark);
         position: sticky;
         top: 0;
         z-index: 1000;
@@ -67,7 +67,7 @@ import { MatIconModule } from '@angular/material/icon';
 
       .logo-icon {
         font-size: 32px;
-        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+        filter: drop-shadow(0 4px 8px var(--shadow-dark));
       }
 
       .school-icon {
@@ -75,7 +75,7 @@ import { MatIconModule } from '@angular/material/icon';
         right: -13px;
         top: -6px;
         font-size: 20px !important;
-        color: #764ba2;
+        color: var(--primary-dark);
         z-index: 1;
         transform: rotate(25grad);
       }
@@ -83,7 +83,7 @@ import { MatIconModule } from '@angular/material/icon';
       .logo-text {
         font-size: 24px;
         font-weight: 700;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: var(--primary-gradient);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -106,7 +106,7 @@ import { MatIconModule } from '@angular/material/icon';
       }
 
       .nav-button:hover {
-        background: rgba(102, 126, 234, 0.1) !important;
+        background: var(--chip-bg) !important;
         transform: translateY(-2px);
       }
 
@@ -115,7 +115,7 @@ import { MatIconModule } from '@angular/material/icon';
         font-weight: 600 !important;
         text-transform: none !important;
         padding: 10px 20px !important;
-        box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3) !important;
+        box-shadow: 0 4px 16px var(--shadow-primary) !important;
         background: var(--secondary-gradient) !important;
       }
 

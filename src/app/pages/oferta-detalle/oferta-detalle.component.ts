@@ -156,12 +156,12 @@ import { AplicarDialogComponent } from '../../components/aplicar-dialog/aplicar-
     `
       .detalle-page {
         min-height: 100vh;
-        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        background: var(--background-page);
       }
 
       .page-header {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
+        background: var(--primary-gradient);
+        color: var(--white);
         padding: 40px 0;
         position: relative;
         overflow: hidden;
@@ -190,10 +190,10 @@ import { AplicarDialogComponent } from '../../components/aplicar-dialog/aplicar-
       }
 
       .back-button {
-        background: rgba(255, 255, 255, 0.2) !important;
+        background: var(--glass-white-medium) !important;
         backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        color: white !important;
+        border: 1px solid var(--glass-white-strong);
+        color: var(--white) !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
@@ -239,13 +239,13 @@ import { AplicarDialogComponent } from '../../components/aplicar-dialog/aplicar-
       }
 
       .salary-highlight {
-        background: rgba(255, 255, 255, 0.2);
+        background: var(--glass-white-medium);
         backdrop-filter: blur(10px);
         padding: 5px 20px;
         border-radius: 25px;
         font-weight: 600;
         font-size: 1.1rem;
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        border: 1px solid var(--glass-white-strong);
       }
 
       .content-container {
@@ -273,11 +273,11 @@ import { AplicarDialogComponent } from '../../components/aplicar-dialog/aplicar-
         gap: 12px;
         font-size: 1.3rem;
         font-weight: 600;
-        color: #1a202c;
+        color: var(--text-primary);
       }
 
       .info-card mat-card-title mat-icon {
-        color: #667eea;
+        color: var(--primary-color);
         font-size: 24px;
         width: 24px;
         height: 24px;
@@ -287,7 +287,7 @@ import { AplicarDialogComponent } from '../../components/aplicar-dialog/aplicar-
       .requirements-text {
         font-size: 1rem;
         line-height: 1.7;
-        color: #4a5568;
+        color: var(--text-secondary);
         margin: 0;
       }
 
@@ -298,9 +298,9 @@ import { AplicarDialogComponent } from '../../components/aplicar-dialog/aplicar-
       }
 
       .tech-chip {
-        background: rgba(102, 126, 234, 0.1) !important;
-        color: #667eea !important;
-        border: 1px solid rgba(102, 126, 234, 0.2) !important;
+        background: var(--chip-bg) !important;
+        color: var(--primary-color) !important;
+        border: 1px solid var(--chip-border) !important;
         font-size: 0.75rem !important;
         font-weight: 500 !important;
         height: 28px !important;
@@ -326,8 +326,8 @@ import { AplicarDialogComponent } from '../../components/aplicar-dialog/aplicar-
       }
 
       .status-applied {
-        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-        color: white;
+        background: linear-gradient(135deg, var(--success-color) 0%, var(--success-dark) 100%);
+        color: var(--white);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -336,8 +336,8 @@ import { AplicarDialogComponent } from '../../components/aplicar-dialog/aplicar-
       }
 
       .status-available {
-        background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-        color: white;
+        background: linear-gradient(135deg, var(--info-color) 0%, var(--info-dark) 100%);
+        color: var(--white);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -353,23 +353,23 @@ import { AplicarDialogComponent } from '../../components/aplicar-dialog/aplicar-
 
       .apply-button {
         background: var(--secondary-gradient) !important;
-        color: white !important;
+        color: var(--white) !important;
         font-weight: 600 !important;
         text-transform: none !important;
         border-radius: 12px !important;
         padding: 16px !important;
         font-size: 1rem !important;
-        box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3) !important;
+        box-shadow: 0 8px 24px var(--shadow-primary) !important;
       }
 
       .apply-button:hover {
         transform: translateY(-2px);
-        box-shadow: 0 12px 32px rgba(102, 126, 234, 0.4) !important;
+        box-shadow: 0 12px 32px var(--shadow-primary-hover) !important;
       }
 
       .applied-button {
-        background: #e2e8f0 !important;
-        color: #64748b !important;
+        background: var(--border-light) !important;
+        color: var(--text-muted) !important;
         font-weight: 500 !important;
         text-transform: none !important;
         border-radius: 12px !important;
@@ -377,8 +377,8 @@ import { AplicarDialogComponent } from '../../components/aplicar-dialog/aplicar-
       }
 
       .save-button {
-        border: 2px solid #e2e8f0 !important;
-        color: #64748b !important;
+        border: 2px solid var(--border-light) !important;
+        color: var(--text-muted) !important;
         font-weight: 500 !important;
         text-transform: none !important;
         border-radius: 12px !important;
@@ -386,13 +386,13 @@ import { AplicarDialogComponent } from '../../components/aplicar-dialog/aplicar-
       }
 
       .save-button:hover {
-        background: #f8fafc !important;
-        border-color: #cbd5e1 !important;
+        background: var(--background-light) !important;
+        border-color: var(--border-medium) !important;
       }
 
       .quick-info mat-card-title {
         font-size: 1.1rem;
-        color: #1a202c;
+        color: var(--text-primary);
       }
 
       .info-list {
@@ -408,7 +408,7 @@ import { AplicarDialogComponent } from '../../components/aplicar-dialog/aplicar-
       }
 
       .info-item mat-icon {
-        color: #667eea;
+        color: var(--primary-color);
         font-size: 20px;
         width: 20px;
         height: 20px;
@@ -423,13 +423,13 @@ import { AplicarDialogComponent } from '../../components/aplicar-dialog/aplicar-
 
       .info-item strong {
         font-size: 0.9rem;
-        color: #1a202c;
+        color: var(--text-primary);
         font-weight: 600;
       }
 
       .info-item span {
         font-size: 0.9rem;
-        color: #64748b;
+        color: var(--text-muted);
       }
 
       @media (max-width: 1024px) {

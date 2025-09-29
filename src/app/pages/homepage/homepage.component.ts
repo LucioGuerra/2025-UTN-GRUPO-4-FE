@@ -80,7 +80,7 @@ import { Router } from '@angular/router';
     }
 
     .hero-section {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: var(--primary-gradient);
       padding: 80px 0;
       margin-bottom: 80px;
       position: relative;
@@ -111,7 +111,7 @@ import { Router } from '@angular/router';
     }
 
     .hero-text {
-      color: white;
+      color: var(--white);
     }
 
     .hero-title {
@@ -135,25 +135,25 @@ import { Router } from '@angular/router';
     }
 
     .cta-button {
-      background: white !important;
-      color: #667eea !important;
+      background: var(--white) !important;
+      color: var(--primary-color) !important;
       border-radius: 50px !important;
       padding: 16px 32px !important;
       font-weight: 600 !important;
       font-size: 16px !important;
       text-transform: none !important;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.15) !important;
+      box-shadow: 0 8px 24px var(--shadow-black-medium) !important;
       transition: all 0.3s ease !important;
     }
 
     .cta-button:hover {
       transform: translateY(-3px);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.25) !important;
+      box-shadow: 0 12px 32px var(--shadow-black-strong) !important;
     }
 
     .secondary-button {
-      border: 2px solid rgba(255,255,255,0.3) !important;
-      color: white !important;
+      border: 2px solid var(--glass-white-strong) !important;
+      color: var(--white) !important;
       border-radius: 50px !important;
       padding: 14px 28px !important;
       font-weight: 500 !important;
@@ -170,7 +170,7 @@ import { Router } from '@angular/router';
       position: absolute;
       width: 80px;
       height: 80px;
-      background: rgba(255,255,255,0.15);
+      background: var(--glass-white-light);
       backdrop-filter: blur(10px);
       border-radius: 20px;
       display: flex;
@@ -178,7 +178,7 @@ import { Router } from '@angular/router';
       justify-content: center;
       font-size: 32px;
       animation: float 6s ease-in-out infinite;
-      border: 1px solid rgba(255,255,255,0.2);
+      border: 1px solid var(--glass-border);
     }
 
     .card-1 {
@@ -228,7 +228,7 @@ import { Router } from '@angular/router';
     .stat-number {
       font-size: 3rem;
       font-weight: 800;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: var(--primary-gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -237,7 +237,7 @@ import { Router } from '@angular/router';
 
     .stat-label {
       font-size: 1.1rem;
-      color: #666;
+      color: var(--text-muted);
       font-weight: 500;
     }
 
@@ -255,13 +255,13 @@ import { Router } from '@angular/router';
     .section-title {
       font-size: 2.5rem;
       font-weight: 700;
-      color: #333;
+      color: var(--text-primary);
       margin-bottom: 16px;
     }
 
     .section-subtitle {
       font-size: 1.2rem;
-      color: #666;
+      color: var(--text-muted);
       max-width: 600px;
       margin: 0 auto;
     }
@@ -278,13 +278,13 @@ import { Router } from '@angular/router';
     }
 
     .view-all-button {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-      color: white !important;
+      background: var(--primary-gradient) !important;
+      color: var(--white) !important;
       border-radius: 50px !important;
       padding: 16px 32px !important;
       font-weight: 600 !important;
       text-transform: none !important;
-      box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3) !important;
+      box-shadow: 0 8px 24px var(--shadow-primary) !important;
       display: inline-flex !important;
       align-items: center !important;
       gap: 8px !important;
@@ -292,7 +292,7 @@ import { Router } from '@angular/router';
 
     .view-all-button:hover {
       transform: translateY(-3px);
-      box-shadow: 0 12px 32px rgba(102, 126, 234, 0.4) !important;
+      box-shadow: 0 12px 32px var(--shadow-primary-hover) !important;
     }
 
     @media (max-width: 768px) {

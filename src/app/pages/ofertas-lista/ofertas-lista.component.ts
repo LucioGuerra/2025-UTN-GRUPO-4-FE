@@ -40,12 +40,12 @@ import { OfertasService } from '../../services/ofertas.service';
     `
       .ofertas-page {
         min-height: 100vh;
-        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        background: var(--background-page);
       }
 
       .page-header {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
+        background: var(--primary-gradient);
+        color: var(--white);
         padding: 60px 0 40px;
         position: relative;
         overflow: hidden;
@@ -90,12 +90,12 @@ import { OfertasService } from '../../services/ofertas.service';
       }
 
       .count-badge {
-        background: rgba(255, 255, 255, 0.2);
+        background: var(--glass-white-medium);
         backdrop-filter: blur(10px);
         padding: 12px 20px;
         border-radius: 25px;
         font-weight: 500;
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        border: 1px solid var(--glass-white-strong);
       }
 
       .ofertas-container {
@@ -113,7 +113,7 @@ import { OfertasService } from '../../services/ofertas.service';
       .empty-state {
         text-align: center;
         padding: 80px 20px;
-        color: #64748b;
+        color: var(--text-muted);
       }
 
       .empty-icon {
@@ -127,7 +127,7 @@ import { OfertasService } from '../../services/ofertas.service';
       .empty-state h3 {
         font-size: 1.5rem;
         margin-bottom: 12px;
-        color: #374151;
+        color: var(--text-light);
       }
 
       .empty-state p {

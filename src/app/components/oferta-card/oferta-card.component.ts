@@ -55,8 +55,8 @@ import { OfertaListaDTO } from '../../models/oferta.dto';
     .oferta-card {
       cursor: pointer;
       margin: 16px 0;
-      background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-      border: 1px solid rgba(0,0,0,0.05);
+      background: linear-gradient(135deg, var(--white) 0%, var(--background-light) 100%);
+      border: 1px solid var(--shadow-black);
       position: relative;
       overflow: hidden;
     }
@@ -68,7 +68,7 @@ import { OfertaListaDTO } from '../../models/oferta.dto';
       left: 0;
       right: 0;
       height: 4px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: var(--primary-gradient);
     }
 
     .card-header {
@@ -86,7 +86,7 @@ import { OfertaListaDTO } from '../../models/oferta.dto';
     .job-title {
       font-size: 1.4rem;
       font-weight: 600;
-      color: #1a202c;
+      color: var(--text-primary);
       margin: 0 0 8px 0;
       line-height: 1.3;
     }
@@ -95,7 +95,7 @@ import { OfertaListaDTO } from '../../models/oferta.dto';
       display: flex;
       align-items: center;
       gap: 4px;
-      color: #64748b;
+      color: var(--text-muted);
       font-size: 0.9rem;
     }
 
@@ -107,13 +107,13 @@ import { OfertaListaDTO } from '../../models/oferta.dto';
 
     .salary-badge {
       background: var(--secondary-gradient);
-      color: white;
+      color: var(--white);
       padding: 8px 16px;
       border-radius: 20px;
       font-size: 0.85rem;
       font-weight: 600;
       white-space: nowrap;
-      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+      box-shadow: 0 4px 12px var(--shadow-primary);
     }
 
     .card-content {
@@ -128,7 +128,7 @@ import { OfertaListaDTO } from '../../models/oferta.dto';
       display: flex;
       align-items: center;
       gap: 8px;
-      color: #4a5568;
+      color: var(--text-secondary);
       font-size: 0.9rem;
       margin-bottom: 8px;
     }
@@ -137,7 +137,7 @@ import { OfertaListaDTO } from '../../models/oferta.dto';
       font-size: 18px;
       width: 18px;
       height: 18px;
-      color: #667eea;
+      color: var(--primary-color);
     }
 
     .tech-stack {
@@ -148,9 +148,9 @@ import { OfertaListaDTO } from '../../models/oferta.dto';
     }
 
     .tech-chip {
-      background: rgba(102, 126, 234, 0.1) !important;
-      color: #667eea !important;
-      border: 1px solid rgba(102, 126, 234, 0.2) !important;
+      background: var(--chip-bg) !important;
+      color: var(--primary-color) !important;
+      border: 1px solid var(--chip-border) !important;
       font-size: 0.75rem !important;
       font-weight: 500 !important;
       height: 28px !important;
@@ -159,21 +159,21 @@ import { OfertaListaDTO } from '../../models/oferta.dto';
 
     .more-tech {
       font-size: 0.75rem;
-      color: #64748b;
+      color: var(--text-muted);
       font-weight: 500;
       padding: 4px 8px;
-      background: rgba(100, 116, 139, 0.1);
+      background: var(--muted-bg);
       border-radius: 12px;
     }
 
     .card-footer {
       padding: 16px 24px 24px;
-      border-top: 1px solid rgba(0,0,0,0.05);
+      border-top: 1px solid var(--shadow-black);
       background: rgba(248, 250, 252, 0.5);
     }
 
     .view-details-btn {
-      color: #667eea !important;
+      color: var(--primary-color) !important;
       font-weight: 500 !important;
       text-transform: none !important;
       padding: 8px 16px !important;
@@ -185,7 +185,7 @@ import { OfertaListaDTO } from '../../models/oferta.dto';
     }
 
     .view-details-btn:hover {
-      background: rgba(102, 126, 234, 0.1) !important;
+      background: var(--chip-bg) !important;
     }
 
     .view-details-btn mat-icon {

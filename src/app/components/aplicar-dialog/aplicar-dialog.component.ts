@@ -86,12 +86,12 @@ export interface DialogData {
     .header-icon {
       width: 48px;
       height: 48px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: var(--primary-gradient);
       border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
+      color: var(--white);
     }
     
     .header-icon mat-icon {
@@ -107,13 +107,13 @@ export interface DialogData {
     .dialog-title {
       font-size: 1.5rem;
       font-weight: 600;
-      color: #1a202c;
+      color: var(--text-primary);
       margin: 0 0 4px 0;
     }
     
     .job-title {
       font-size: 1rem;
-      color: #667eea;
+      color: var(--primary-color);
       font-weight: 500;
       margin: 0;
     }
@@ -134,19 +134,19 @@ export interface DialogData {
       gap: 8px;
       margin-bottom: 16px;
       font-weight: 500;
-      color: #374151;
+      color: var(--text-light);
     }
     
     .section-header mat-icon {
-      color: #667eea;
+      color: var(--primary-color);
       font-size: 20px;
       width: 20px;
       height: 20px;
     }
     
     .optional-badge {
-      background: #e2e8f0;
-      color: #64748b;
+      background: var(--border-light);
+      color: var(--text-muted);
       font-size: 0.75rem;
       padding: 4px 8px;
       border-radius: 12px;
@@ -164,8 +164,8 @@ export interface DialogData {
     }
     
     .tips-section {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
+      background: var(--background-light);
+      border: 1px solid var(--border-light);
       border-radius: 12px;
       padding: 20px;
       margin-top: 16px;
@@ -174,7 +174,7 @@ export interface DialogData {
     .tips-section h4 {
       font-size: 1rem;
       font-weight: 600;
-      color: #374151;
+      color: var(--text-light);
       margin: 0 0 12px 0;
       display: flex;
       align-items: center;
@@ -189,7 +189,7 @@ export interface DialogData {
     .tips-section ul {
       margin: 0;
       padding-left: 20px;
-      color: #64748b;
+      color: var(--text-muted);
     }
     
     .tips-section li {
@@ -201,13 +201,13 @@ export interface DialogData {
       padding: 24px !important;
       gap: 12px !important;
       justify-content: flex-end !important;
-      border-top: 1px solid #e2e8f0;
+      border-top: 1px solid var(--border-light);
       margin-top: 24px;
     }
     
     .cancel-button {
-      border: 2px solid #e2e8f0 !important;
-      color: #64748b !important;
+      border: 2px solid var(--border-light) !important;
+      color: var(--text-muted) !important;
       font-weight: 500 !important;
       text-transform: none !important;
       border-radius: 8px !important;
@@ -215,23 +215,23 @@ export interface DialogData {
     }
     
     .cancel-button:hover {
-      background: #f8fafc !important;
-      border-color: #cbd5e1 !important;
+      background: var(--background-light) !important;
+      border-color: var(--border-medium) !important;
     }
     
     .apply-button {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-      color: white !important;
+      background: var(--primary-gradient) !important;
+      color: var(--white) !important;
       font-weight: 600 !important;
       text-transform: none !important;
       border-radius: 8px !important;
       padding: 12px 24px !important;
-      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3) !important;
+      box-shadow: 0 4px 12px var(--shadow-primary) !important;
     }
     
     .apply-button:hover {
       transform: translateY(-1px);
-      box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4) !important;
+      box-shadow: 0 6px 16px var(--shadow-primary-hover) !important;
     }
     
     .cancel-button mat-icon,
