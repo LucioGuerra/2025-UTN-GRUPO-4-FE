@@ -23,8 +23,8 @@ import { MatIconModule } from '@angular/material/icon';
           <button mat-button class="nav-button" (click)="verOfertas()">
             <span>Ofertas</span>
           </button>
-          <button mat-raised-button class="profile-button" color="accent">
-            <span>Mi Perfil</span>
+          <button mat-raised-button class="profile-button" color="accent" (click)="irPerfil()">
+            <span><mat-icon>person</mat-icon> Mi Perfil</span>
           </button>
         </nav>
       </div>
@@ -110,10 +110,13 @@ import { MatIconModule } from '@angular/material/icon';
         transform: translateY(-2px);
       }
 
+      mat-icon{
+        margin-bottom: -7px;
+      }
+
       .profile-button {
         border-radius: 24px !important;
         font-weight: 600 !important;
-        text-transform: none !important;
         padding: 10px 20px !important;
         box-shadow: 0 4px 16px var(--shadow-primary) !important;
         background: var(--secondary-gradient) !important;
@@ -141,7 +144,7 @@ import { MatIconModule } from '@angular/material/icon';
   ],
 })
 export class NavbarComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   irInicio(): void {
     this.router.navigate(['/']);
@@ -149,5 +152,9 @@ export class NavbarComponent {
 
   verOfertas(): void {
     this.router.navigate(['/ofertas']);
+  }
+
+  irPerfil(): void {
+    this.router.navigate(['/perfil']);
   }
 }
